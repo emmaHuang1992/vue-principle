@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Principle</title>
+</head>
+<body>
+    <div id="app">
+        {{test}}
+        <p v-text="test"></p>
+        <p v-html="html"></p>
+        <p>
+            <input type="text" v-model="test">
+        </p>
+        <p>
+            <button @click="onClick">按钮</button>
+        </p>
+    </div>
+
+    <script src="vue.js"></script>
+    <script src="compile.js"></script>
+    <script>
+      const o = new Vue({
+        el: "#app",
+        data: {
+          test: "hello vue",
+          foo: { bar: "bar" },
+          html: '<button>我是按钮</button>'
+        },
+        methods: {
+            onClick() {
+                alert('你点击了按钮')
+            }
+        },
+      });
+    </script>
+    
+</body>
+</html>
